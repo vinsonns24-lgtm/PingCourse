@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-on-surface font-body-md min-h-screen flex flex-col selection:bg-primary-fixed selection:text-on-primary-fixed;
+  }
+  #root {
+    @apply flex-grow flex flex-col w-full;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-surface/70 backdrop-blur-xl border border-white/40 shadow-[0px_8px_24px_rgba(0,0,0,0.04)] rounded-xl transition-all duration-300;
+  }
+  .glass-panel:hover {
+    @apply -translate-y-1 shadow-[0px_16px_32px_rgba(0,0,0,0.08)];
+  }
+  
+  .glass-card {
+    @apply bg-surface/80 backdrop-blur-md border border-outline-variant/30 shadow-sm rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-outline-variant/50;
+  }
+
+  .glass-card-active {
+    @apply bg-white/85 backdrop-blur-xl border border-primary shadow-[0px_8px_24px_rgba(0,0,0,0.08)] rounded-xl transition-all duration-300;
+  }
+
+  .hero-pattern {
+    background-image: radial-gradient(theme('colors.primary-fixed-dim') 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-on-primary rounded-lg font-label-md py-2 px-4 shadow-sm hover:shadow-md hover:opacity-90 active:scale-95 transition-all duration-200 flex justify-center items-center gap-xs;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent border-2 border-primary text-primary rounded-lg font-label-md py-1.5 px-4 hover:bg-primary-fixed/50 active:scale-95 transition-all duration-200 flex justify-center items-center gap-xs;
+  }
+
+  /* Staggered animation delays */
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0;
+  }
+  .material-symbols-outlined.filled {
+    font-variation-settings: 'FILL' 1;
+  }
+
+  .bg-pattern {
+    background-image: radial-gradient(theme('colors.surface-variant') 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
