@@ -166,6 +166,118 @@ function App() {
             </motion.div>
           </div>
         </section>
+
+        {/* Method Section */}
+        <section className="w-full max-w-[1280px] mx-auto px-margin-mobile md:px-lg py-xl" id="method">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-lg"
+          >
+            <h2 className="font-headline-lg text-headline-lg text-on-surface mb-sm">Our Methodology</h2>
+            <p className="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">A scientifically proven 3-step process to ensure rapid acquisition and long-term retention.</p>
+          </motion.div>
+          <div className="flex flex-col md:flex-row gap-lg md:gap-md justify-center relative mt-8">
+            <div className="hidden md:block absolute top-1/2 left-0 w-full h-[2px] bg-outline-variant/30 -z-10 -translate-y-1/2"></div>
+            {[ 
+              { step: "01", title: "Assessment", desc: "We evaluate your current proficiency to place you in the exact right cohort." },
+              { step: "02", title: "Immersion", desc: "Deep engagement through speaking, listening, and cultural context." },
+              { step: "03", title: "Mastery", desc: "Rigorous testing and real-world application to guarantee fluency." }
+            ].map((item, idx) => (
+              <motion.div 
+                key={idx}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6, delay: idx * 0.2 }}
+                className="flex-1 bg-surface/80 backdrop-blur-md rounded-2xl p-md border border-outline-variant/30 text-center relative hover:-translate-y-2 transition-transform duration-300 shadow-sm hover:shadow-md mt-6 md:mt-0"
+              >
+                <div className="w-16 h-16 rounded-full bg-primary text-on-primary font-headline-md text-headline-md flex items-center justify-center mx-auto -mt-12 mb-sm shadow-lg border-4 border-surface">
+                  {item.step}
+                </div>
+                <h3 className="font-headline-sm text-headline-sm text-on-surface mb-xs">{item.title}</h3>
+                <p className="font-body-md text-body-md text-on-surface-variant">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+
+        {/* Pricing Section */}
+        <section className="w-full max-w-[1280px] mx-auto px-margin-mobile md:px-lg py-xl mb-xl" id="pricing">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-lg"
+          >
+            <h2 className="font-headline-lg text-headline-lg text-on-surface mb-sm">Investment</h2>
+            <p className="font-body-md text-body-md text-on-surface-variant">Choose the perfect plan for your language goals.</p>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-md items-center">
+            {/* Basic Tier */}
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6 }}
+              className="glass-card rounded-2xl p-lg flex flex-col border border-outline-variant/30"
+            >
+              <h3 className="font-headline-sm text-headline-sm text-on-surface mb-xs">Essential</h3>
+              <p className="font-body-sm text-body-sm text-on-surface-variant mb-md">For casual learners</p>
+              <p className="font-display-md text-display-md text-primary mb-lg">Rp 499k<span className="font-body-md text-body-md text-on-surface-variant">/mo</span></p>
+              <ul className="flex flex-col gap-sm mb-xl font-body-md text-body-md text-on-surface-variant flex-grow">
+                <li className="flex items-start gap-xs"><span className="material-symbols-outlined text-primary text-[20px] shrink-0">check_circle</span> 4x Group Sessions</li>
+                <li className="flex items-start gap-xs"><span className="material-symbols-outlined text-primary text-[20px] shrink-0">check_circle</span> Access to digital modules</li>
+                <li className="flex items-start gap-xs"><span className="material-symbols-outlined text-primary text-[20px] shrink-0">check_circle</span> Basic Community Forum</li>
+              </ul>
+              <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="w-full py-3 mt-auto rounded-lg border border-primary text-primary font-label-md text-label-md hover:bg-primary/5 transition-colors">Select Plan</motion.button>
+            </motion.div>
+
+            {/* Pro Tier (Popular) */}
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="bg-primary-container/20 backdrop-blur-xl rounded-2xl p-lg flex flex-col border-2 border-primary shadow-[0_8px_32px_rgba(0,0,0,0.08)] transform md:-translate-y-4"
+            >
+              <div className="bg-primary text-on-primary font-label-sm text-label-sm px-3 py-1 rounded-full w-max mx-auto -mt-10 mb-md shadow-md">MOST POPULAR</div>
+              <h3 className="font-headline-sm text-headline-sm text-on-surface mb-xs">Professional</h3>
+              <p className="font-body-sm text-body-sm text-on-surface-variant mb-md">For serious certification</p>
+              <p className="font-display-md text-display-md text-primary mb-lg">Rp 899k<span className="font-body-md text-body-md text-on-surface-variant">/mo</span></p>
+              <ul className="flex flex-col gap-sm mb-xl font-body-md text-body-md text-on-surface-variant flex-grow">
+                <li className="flex items-start gap-xs"><span className="material-symbols-outlined text-primary text-[20px] shrink-0">check_circle</span> 8x Intensive Sessions</li>
+                <li className="flex items-start gap-xs"><span className="material-symbols-outlined text-primary text-[20px] shrink-0">check_circle</span> 1-on-1 Speaking Practice</li>
+                <li className="flex items-start gap-xs"><span className="material-symbols-outlined text-primary text-[20px] shrink-0">check_circle</span> IELTS/HSK Tryouts</li>
+                <li className="flex items-start gap-xs"><span className="material-symbols-outlined text-primary text-[20px] shrink-0">check_circle</span> Premium Community</li>
+              </ul>
+              <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="w-full py-3 mt-auto rounded-lg bg-primary text-on-primary font-label-md text-label-md shadow-md hover:bg-primary/90 transition-colors">Select Plan</motion.button>
+            </motion.div>
+
+            {/* VIP Tier */}
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="glass-card rounded-2xl p-lg flex flex-col border border-outline-variant/30"
+            >
+              <h3 className="font-headline-sm text-headline-sm text-on-surface mb-xs">Elite Private</h3>
+              <p className="font-body-sm text-body-sm text-on-surface-variant mb-md">For executives & expedited</p>
+              <p className="font-display-md text-display-md text-primary mb-lg">Rp 1.9M<span className="font-body-md text-body-md text-on-surface-variant">/mo</span></p>
+              <ul className="flex flex-col gap-sm mb-xl font-body-md text-body-md text-on-surface-variant flex-grow">
+                <li className="flex items-start gap-xs"><span className="material-symbols-outlined text-primary text-[20px] shrink-0">check_circle</span> Fully Customized Curriculum</li>
+                <li className="flex items-start gap-xs"><span className="material-symbols-outlined text-primary text-[20px] shrink-0">check_circle</span> Flexible Scheduling</li>
+                <li className="flex items-start gap-xs"><span className="material-symbols-outlined text-primary text-[20px] shrink-0">check_circle</span> Dedicated Mentor</li>
+                <li className="flex items-start gap-xs"><span className="material-symbols-outlined text-primary text-[20px] shrink-0">check_circle</span> Priority 24/7 Support</li>
+              </ul>
+              <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="w-full py-3 mt-auto rounded-lg border border-primary text-primary font-label-md text-label-md hover:bg-primary/5 transition-colors">Select Plan</motion.button>
+            </motion.div>
+          </div>
+        </section>
       </main>
 
       {/* BottomNavBar (Mobile) */}
